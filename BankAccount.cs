@@ -24,4 +24,25 @@ namespace OOPsDemo
             return AccountHolderName;
         }
     }
+
+    public class SavingsAccount : BankAccount
+    { 
+    private decimal InterestRate { get; set; }
+
+        public SavingsAccount(string acholdername, decimal bal,decimal interestrate):base(acholdername,bal)
+        {
+            InterestRate = interestrate;    
+            
+        }
+        public override string DisplayBalance(out decimal bal)
+        {
+            Console.WriteLine(InterestRate);
+            string s=base.DisplayBalance(out bal);
+            return s;
+        
+        
+        }
+
+    }
+
 }
